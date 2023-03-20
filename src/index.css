@@ -176,3 +176,35 @@ transition: transform 0.15s ease-in-out;
   align-items: flex-end;
   margin-bottom: 20px;
 }
+.cartTotalBlock ul{
+  display: block;
+  margin-bottom: 40px !important;
+}
+.greenButton{
+  width: 100%;
+  height: 55px;
+  background: #9dd558;
+  border-radius: 18px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+.greenButton img{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+.greenButton img:hover{
+  transform: translateX(7px);
+}
+.greenButton:hover {
+  background: lighten(#9dd558, 5%);
+}
+.greenButton:active {
+  background: darken(#9dd558, 5%);
+}

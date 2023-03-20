@@ -5,7 +5,7 @@ function App() {
         <div className="drawer">
           <h2 style={{ margin: 0, marginBottom: 30 }}>Корзина</h2>
 
-          <div className="Items">
+          <div className="Items" style={{ flex: 1 }}>
             <div className="cartItem">
               <img style={{ marginRight: 20 }} width={70} height={70} src="/img/sneakers/1.png" alt="Sneakers" />
               <div style={{ marginRight: 20 }}>
@@ -25,18 +25,23 @@ function App() {
             </div>
           </div>
 
-          <ul className="cartTotalBlock">
-            <li style={{ display: "flex" }}>
-              <span>Итого:</span>
-              <div></div>
-              <b>21 657 грн.</b>
-            </li>
-            <li style={{ display: "flex" }}>
-              <span>Налог 5%:</span>
-              <div></div>
-              <b>1078 грн.</b>
-            </li>
-          </ul>
+          <div className="cartTotalBlock">
+            <ul>
+              <li>
+                <span>Итого:</span>
+                <div></div>
+                <b>21 657 грн.</b>
+              </li>
+              <li>
+                <span>Налог 5%:</span>
+                <div></div>
+                <b>1078 грн.</b>
+              </li>
+            </ul>
+            <button className="greenButton">
+              Оформить заказ <img style={{ marginLeft: 20 }} width={20} height={20} src="/img/arrow.png" alt="Arrow" />
+            </button>
+          </div>
         </div>
       </div>
 
