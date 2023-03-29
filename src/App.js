@@ -1,9 +1,13 @@
+import Card from './components/Card'
+
 function App() {
   return (
     <div className="wrapper">
-      <div className="overlay">
+      <div style={{display: "none"}} className="overlay">
         <div className="drawer">
-          <h2 style={{ margin: 0, marginBottom: 30 }}>Корзина</h2>
+          <h2 style={{ margin: 0, marginBottom: 30, display: "flex", justifyContent: "space-between" }}>
+            Корзина <img className="removeBtn" width={25} height={25} src="/img/remove.svg" alt="Remove" />
+          </h2>
 
           <div className="Items" style={{ flex: 1 }}>
             <div className="cartItem">
@@ -38,9 +42,7 @@ function App() {
                 <b>1078 грн.</b>
               </li>
             </ul>
-            <button className="greenButton">
-              Оформить заказ <img style={{ marginLeft: 20 }} width={20} height={20} src="/img/arrow.png" alt="Arrow" />
-            </button>
+            <button className="greenButton">Оформить заказ</button>
           </div>
         </div>
       </div>
@@ -73,74 +75,7 @@ function App() {
         </div>
 
         <div className="sneakers">
-          <div class="card">
-            <div className="favorite">
-              <img width={20} height={20} src="/img/heart-unlike.svg" alt="Unliked" />
-            </div>
-            <img class="displayed" src="/img/sneakers/1.png" alt="Sneakers" />
-            <h5>Мужский кроссовки Nike Blazer Mid Suede</h5>
-            <div className="cardButton">
-              <div className="textButton">
-                <span>Цена:</span>
-                <b style={{ fontSize: 13 }}>12 999 грн.</b>
-              </div>
-              <button className="button">
-                <img width={11} height={11} src="/img/plus.png" alt="Plus" />
-              </button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div className="favorite">
-              <img width={20} height={20} src="/img/heart-unlike.svg" alt="Unliked" />
-            </div>
-            <img class="displayed" src="/img/sneakers/2.png" alt="Sneakers" />
-            <h5>Мужский кроссовки Nike Blazer Mid Suede</h5>
-            <div className="cardButton">
-              <div className="textButton">
-                <span>Цена:</span>
-                <b style={{ fontSize: 13 }}>12 999 грн.</b>
-              </div>
-              <button className="button">
-                <img width={11} height={11} src="/img/plus.png" alt="Plus" />
-              </button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div className="favorite">
-              <img width={20} height={20} src="/img/heart-unlike.svg" alt="Unliked" />
-            </div>
-            <img class="displayed" src="/img/sneakers/3.png" alt="Sneakers" />
-            <h5>Мужский кроссовки Nike Blazer Mid Suede</h5>
-            <div className="cardButton">
-              <div className="textButton">
-                <span>Цена:</span>
-                <b style={{ fontSize: 13 }}>12 999 грн.</b>
-              </div>
-              <button className="button">
-                <img width={11} height={11} src="/img/plus.png" alt="Plus" />
-              </button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div className="favorite">
-              <img width={20} height={20} src="/img/heart-unlike.svg" alt="Unliked" />
-            </div>
-            <img class="displayed" src="/img/sneakers/4.png" alt="Sneakers" />
-            <h5>Мужский кроссовки Nike Blazer Mid Suede</h5>
-            <div className="cardButton">
-              <div className="textButton">
-                <span>Цена:</span>
-                <b style={{ fontSize: 13 }}>12 999 грн.</b>
-              </div>
-              <button className="button">
-                <img width={11} height={11} src="/img/plus.png" alt="Plus" />
-              </button>
-            </div>
-          </div>
-
+          <Card/>
         </div>
       </div>
     </div>

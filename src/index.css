@@ -138,13 +138,17 @@ h5{
 .drawer{
   position: absolute;
   width: 420px;
-  height: 100%;
+  height: 80%;
   right: 0;
   background: #ffffff;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   padding: 30px;
   display: flex;
   flex-direction: column;
+}
+.Items{
+  overflow: auto;
+  margin-bottom: 40px;
 }
 .cartItem{
   display: flex;
@@ -192,19 +196,14 @@ transition: transform 0.15s ease-in-out;
   position: relative;
   cursor: pointer;
   transition: background-color 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 }
-.greenButton img{
-  position: absolute;
-  right: 30px;
-  top: 20px;
-  transition: transform 0.2s ease-in-out;
-}
-.greenButton img:hover{
-  transform: translateX(7px);
-}
+
 .greenButton:hover {
-  background: lighten(#9dd558, 5%);
+  background-color: #316b33;
+  position: relative;
 }
+
 .greenButton:active {
-  background: darken(#9dd558, 5%);
+  transform: translateY(5px);
 }
