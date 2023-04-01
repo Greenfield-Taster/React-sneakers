@@ -1,4 +1,6 @@
 import logo from "../assets/img/logo.png";
+import cart from "../assets/img/cart.png";
+import user from "../assets/img/user.png";
 
 function Header() {
   return (
@@ -12,11 +14,11 @@ function Header() {
       </div>
       <ul className="headerRight">
         <li>
-          <img width={20} height={20} src="/img/cart.png" />
+          <img width={20} height={20} src={cart} />
           <span>1200 грн.</span>
         </li>
         <li>
-          <img width={23} height={23} src="/img/user.png" />
+          <img width={23} height={23} src={user} />
         </li>
       </ul>
     </header>
