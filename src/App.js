@@ -2,6 +2,35 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 import searchIcon from "./assets/img/search.png";
+import sneak1 from "../src/assets/img/sneakers/1.png";
+import sneak2 from "../src/assets/img/sneakers/2.png";
+import sneak3 from "../src/assets/img/sneakers/3.png";
+import sneak4 from "../src/assets/img/sneakers/4.png";
+import heartLike from "../src/assets/img/heart-like.svg";
+import heartUnlike from "../src/assets/img/heart-unlike.svg";
+
+const arr = [
+  {
+    title: "Мужский кроссовки Nike Blazer Mid Suede",
+    price: 12999,
+    imageUrl: { sneak1 },
+  },
+  {
+    title: "Мужский кроссовки Nike Air Max 230",
+    price: 15100,
+    imageUrl: { sneak2 },
+  },
+  {
+    title: "Kроссовки Nike Air Free 550",
+    price: 8099,
+    imageUrl: { sneak3 },
+  },
+  {
+    title: "Kроссовки Puma X Aka Boku Future Rider",
+    price: 13000,
+    imageUrl: { sneak4 },
+  },
+];
 
 function App() {
   return (
@@ -18,11 +47,14 @@ function App() {
         </div>
 
         <div className="sneakers">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {arr.map((obj) => (
+            <Card
+              title={obj.title}
+              price={obj.price}
+              imageUrl={sneak2}
+              liked={heartUnlike}
+            />
+          ))}
         </div>
       </div>
     </div>
