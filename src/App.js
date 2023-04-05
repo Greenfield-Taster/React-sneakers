@@ -13,7 +13,7 @@ function App() {
           <h1>Все кроссовки</h1>
           <div className="search-block">
             <img className="search-block-img" src={searchIcon} alt="Search" />
-            <input placeholder="Поиск..." />
+            <input style={{ outline: "none" }} placeholder="Поиск..." />
           </div>
         </div>
 
