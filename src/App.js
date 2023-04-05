@@ -13,22 +13,22 @@ const arr = [
   {
     title: "Мужский кроссовки Nike Blazer Mid Suede",
     price: 12999,
-    imageUrl: { sneak1 },
+    imageUrl: sneak1,
   },
   {
     title: "Мужский кроссовки Nike Air Max 230",
     price: 15100,
-    imageUrl: { sneak2 },
+    imageUrl: sneak2,
   },
   {
     title: "Kроссовки Nike Air Free 550",
     price: 8099,
-    imageUrl: { sneak3 },
+    imageUrl: sneak3,
   },
   {
     title: "Kроссовки Puma X Aka Boku Future Rider",
     price: 13000,
-    imageUrl: { sneak4 },
+    imageUrl: sneak4,
   },
 ];
 
@@ -51,7 +51,7 @@ function App() {
             <Card
               title={obj.title}
               price={obj.price}
-              imageUrl={sneak2}
+              imageUrl={obj.imageUrl}
               liked={heartUnlike}
             />
           ))}

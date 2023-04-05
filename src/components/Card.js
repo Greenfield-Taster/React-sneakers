@@ -13,7 +13,7 @@ function Card(props) {
       <div className="cardButton">
         <div className="textButton">
           <span>Цена:</span>
-          <b style={{ fontSize: 13 }}>{props.price}</b>
+          <b style={{ fontSize: 13 }}>{props.price} грн</b>
         </div>
         <button className="button">
           <img width={11} height={11} src={plus} alt="Plus" />
