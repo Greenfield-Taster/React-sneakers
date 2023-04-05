@@ -3,6 +3,7 @@ import heartLike from "../assets/img/heart-like.svg";
 import plus from "../assets/img/plus.svg";
 
 function Card(props) {
+  console.log(props);
   return (
     <div class="card">
       <div className="favorite">
@@ -15,7 +16,7 @@ function Card(props) {
           <span>Цена:</span>
           <b style={{ fontSize: 13 }}>{props.price} грн</b>
         </div>
-        <button className="button">
+        <button className="button" onClick={props.onClick}>
           <img width={11} height={11} src={plus} alt="Plus" />
         </button>
       </div>

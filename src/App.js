@@ -53,6 +53,7 @@ function App() {
               price={obj.price}
               imageUrl={obj.imageUrl}
               liked={heartUnlike}
+              onClick={() => console.log(obj)}
             />
           ))}
         </div>
