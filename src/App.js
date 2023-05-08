@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
@@ -8,6 +9,7 @@ import sneak3 from "../src/assets/img/sneakers/3.png";
 import sneak4 from "../src/assets/img/sneakers/4.png";
 import heartLike from "../src/assets/img/heart-like.svg";
 import heartUnlike from "../src/assets/img/heart-unlike.svg";
+import plus from "../src/assets/img/plus.svg";
 
 const arr = [
   {
@@ -53,7 +55,9 @@ function App() {
               price={obj.price}
               imageUrl={obj.imageUrl}
               liked={heartUnlike}
-              onClick={() => console.log(obj)}
+              plus={plus}
+              onFavorite={() => console.log("Добавили в закладки")}
+              onPlus={() => console.log("Нажали плюс")}
             />
           ))}
         </div>
