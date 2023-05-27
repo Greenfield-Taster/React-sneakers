@@ -2,9 +2,9 @@ import removeBtn from "../assets/img/remove.svg";
 import sneaker1 from "../assets/img/sneakers/1.png";
 import sneaker2 from "../assets/img/sneakers/2.png";
 
-function Drawer() {
+function Drawer(props) {
   return (
-    <div style={{ display: "none" }} className="overlay">
+    <div className="overlay">
       <div className="drawer">
         <h2
           style={{
@@ -16,6 +16,7 @@ function Drawer() {
         >
           Корзина{" "}
           <img
+            onClick={props.onClose}
             className="removeBtn"
             width={25}
             height={25}

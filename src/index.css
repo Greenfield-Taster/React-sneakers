@@ -41,6 +41,7 @@ img {
   display: flex;
   margin-right: 30px;
   list-style-type: none;
+  cursor: pointer;
 }
 li {
   margin-right: 30px;

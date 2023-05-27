@@ -2,7 +2,7 @@ import logo from "../assets/img/logo.png";
 import cart from "../assets/img/cart.png";
 import user from "../assets/img/user.png";
 
-function Header() {
+function Header(props) {
   return (
     <header>
       <div className="headerLeft">
@@ -13,7 +13,7 @@ function Header() {
         </div>
       </div>
       <ul className="headerRight">
-        <li>
+        <li onClick={props.onClickCart}>
           <img width={20} height={20} src={cart} />
           <span>1200 грн.</span>
         </li>
