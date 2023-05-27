@@ -15,6 +15,10 @@
   position: absolute;
   cursor: pointer;
 }
+.favorite img {
+  width: 20px;
+  height: 20px;
+}
 .displayed {
   display: block;
   margin-left: auto;
@@ -51,4 +55,13 @@ h5 {
   width: 32px;
   cursor: pointer;
   text-align: center;
+}
+
+img {
+  border-radius: 5px;
+  margin-right: 15px;
+}
+.button img {
+  display: block;
+  margin: 0 auto;
 }
