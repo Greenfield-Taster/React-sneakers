@@ -4,6 +4,9 @@ import styles from "./Card.module.css";
 import plusCard from "../Card/img/plus.svg";
 import plusAddedCard from "../Card/img/icons8-done-24.png";
 
+import heartLike from "../Card/img/heart-like.svg";
+import heartUnlike from "../Card/img/heart-unlike.svg";
+
 console.log(styles);
 
 function Card(props) {
@@ -13,10 +16,20 @@ function Card(props) {
     setIsAdded(!isAdded);
   };
 
+  const [isFollowed, setIsFollow] = React.useState(false);
+
+  const onClickFollow = () => {
+    setIsFollow(!isFollowed);
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.favorite} onClick={props.onFavorite}>
-        <img src={props.liked} alt="Unliked" />
+        <img
+          onClick={onClickFollow}
+          src={isFollowed ? heartLike : heartUnlike}
+          alt="Unliked"
+        />
       </div>
       <img class={styles.displayed} src={props.imageUrl} alt="Sneakers" />
       <h5>{props.title}</h5>
