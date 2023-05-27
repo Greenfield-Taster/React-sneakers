@@ -41,6 +41,7 @@ h5 {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  align-items: center;
 }
 .textButton {
   display: flex;
@@ -56,12 +57,20 @@ h5 {
   cursor: pointer;
   text-align: center;
 }
-
+.button img {
+  width: 11px;
+  height: 11px;
+  display: block;
+  margin: 0 auto;
+}
+.plus {
+  width: 11px;
+  height: 11px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
 img {
   border-radius: 5px;
   margin-right: 15px;
-}
-.button img {
-  display: block;
-  margin: 0 auto;
 }

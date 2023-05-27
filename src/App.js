@@ -10,6 +10,7 @@ import sneak4 from "../src/assets/img/sneakers/4.png";
 import heartLike from "../src/assets/img/heart-like.svg";
 import heartUnlike from "../src/assets/img/heart-unlike.svg";
 import plus from "../src/assets/img/plus.svg";
+import plusAdded from "../src/assets/img/icons8-done-24.png";
 
 const arr = [
   {
@@ -56,6 +57,7 @@ function App() {
               imageUrl={obj.imageUrl}
               liked={heartUnlike}
               plus={plus}
+              plusAdded={plusAdded}
               onFavorite={() => console.log("Добавили в закладки")}
               onPlus={() => console.log("Нажали плюс")}
             />
