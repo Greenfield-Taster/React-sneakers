@@ -7,37 +7,27 @@ import sneak1 from "../src/assets/img/sneakers/1.png";
 import sneak2 from "../src/assets/img/sneakers/2.png";
 import sneak3 from "../src/assets/img/sneakers/3.png";
 import sneak4 from "../src/assets/img/sneakers/4.png";
+import sneak5 from "../src/assets/img/sneakers/5.png";
+import sneak6 from "../src/assets/img/sneakers/6.png";
+import sneak7 from "../src/assets/img/sneakers/7.png";
 import heartLike from "../src/assets/img/heart-like.svg";
 import heartUnlike from "../src/assets/img/heart-unlike.svg";
 import plus from "../src/assets/img/plus.svg";
 import plusAdded from "../src/assets/img/icons8-done-24.png";
 
-const arr = [
-  {
-    title: "Мужский кроссовки Nike Blazer Mid Suede",
-    price: 12999,
-    imageUrl: sneak1,
-  },
-  {
-    title: "Мужский кроссовки Nike Air Max 230",
-    price: 15100,
-    imageUrl: sneak2,
-  },
-  {
-    title: "Kроссовки Nike Air Free 550",
-    price: 8099,
-    imageUrl: sneak3,
-  },
-  {
-    title: "Kроссовки Puma X Aka Boku Future Rider",
-    price: 13000,
-    imageUrl: sneak4,
-  },
-];
-
 function App() {
+  let [items, setItems] = React.useState([]);
   const [cartOpened, setCartOpened] = React.useState(false);
 
+  React.useEffect(() => {
+    fetch("https://648b113717f1536d65ea468c.mockapi.io/items")
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setItems(json);
+      });
+  }, []);
   return (
     <div className="wrapper">
       {cartOpened && <Drawer onClose={() => setCartOpened(false)} />}
@@ -45,6 +35,7 @@ function App() {
       <div className="content">
         <div className="search-text">
           <h1>Все кроссовки</h1>
+          <img src="./assets/img/sneakers/1.png" />
           <div className="search-block">
             <img className="search-block-img" src={searchIcon} alt="Search" />
             <input style={{ outline: "none" }} placeholder="Поиск..." />
@@ -52,7 +43,7 @@ function App() {
         </div>
 
         <div className="sneakers">
-          {arr.map((obj) => (
+          {items.map((obj) => (
             <Card
               title={obj.title}
               price={obj.price}
