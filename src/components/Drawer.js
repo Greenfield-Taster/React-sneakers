@@ -2,7 +2,7 @@ import removeBtn from "../assets/img/remove.svg";
 import sneaker1 from "../assets/img/sneakers/1.png";
 import sneaker2 from "../assets/img/sneakers/2.png";
 
-function Drawer(props) {
+function Drawer({ onClose, items = [] }) {
   return (
     <div className="overlay">
       <div className="drawer">
@@ -16,7 +16,7 @@ function Drawer(props) {
         >
           Корзина{" "}
           <img
-            onClick={props.onClose}
+            onClick={onClose}
             className="removeBtn"
             width={25}
             height={25}
@@ -26,51 +26,31 @@ function Drawer(props) {
         </h2>
 
         <div className="Items" style={{ flex: 1 }}>
-          <div className="cartItem">
-            <img
-              style={{ marginRight: 20 }}
-              width={70}
-              height={70}
-              src={sneaker1}
-              alt="Sneakers"
-            />
-            <div style={{ marginRight: 20 }}>
-              <p style={{ marginBottom: 5, fontSize: 16 }}>
-                Мужские кроссовки Nike Air Max 270
-              </p>
-              <b style={{ fontSize: 14 }}>12 999 грн.</b>
+          {items.map((obj) => (
+            <div className="cartItem">
+              <img
+                style={{
+                  marginRight: 20,
+                  backgroundImage: "url({obj.imageUrl})",
+                }}
+                width={70}
+                height={70}
+                //src={sneaker1}
+                alt="Sneakers"
+              />
+              <div style={{ marginRight: 20 }}>
+                <p style={{ marginBottom: 5, fontSize: 16 }}>{obj.title}</p>
+                <b style={{ fontSize: 14 }}>{obj.price} грн</b>
+              </div>
+              <img
+                className="removeBtn"
+                width={25}
+                height={25}
+                src={removeBtn}
+                alt="Remove"
+              />
             </div>
-            <img
-              className="removeBtn"
-              width={25}
-              height={25}
-              src={removeBtn}
-              alt="Remove"
-            />
-          </div>
-
-          <div className="cartItem">
-            <img
-              style={{ marginRight: 20 }}
-              width={70}
-              height={70}
-              src={sneaker2}
-              alt="Sneakers"
-            />
-            <div style={{ marginRight: 20 }}>
-              <p style={{ marginBottom: 5, fontSize: 16 }}>
-                Мужские кроссовки Nike Air Max 270
-              </p>
-              <b style={{ fontSize: 14 }}>12 999 грн.</b>
-            </div>
-            <img
-              className="removeBtn"
-              width={25}
-              height={25}
-              src={removeBtn}
-              alt="Remove"
-            />
-          </div>
+          ))}
         </div>
 
         <div className="cartTotalBlock">

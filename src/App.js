@@ -17,6 +17,7 @@ import plusAdded from "../src/assets/img/icons8-done-24.png";
 
 function App() {
   let [items, setItems] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState([]);
   const [cartOpened, setCartOpened] = React.useState(false);
 
   React.useEffect(() => {
@@ -28,14 +29,21 @@ function App() {
         setItems(json);
       });
   }, []);
+
+  const onAddToCart = (obj) => {
+    setCartItems((prev) => [...prev, obj]);
+  };
+
   return (
     <div className="wrapper">
-      {cartOpened && <Drawer onClose={() => setCartOpened(false)} />}
+      {cartOpened && (
+        <Drawer items={cartItems} onClose={() => setCartOpened(false)} />
+      )}
       <Header onClickCart={() => setCartOpened(true)} />
       <div className="content">
         <div className="search-text">
           <h1>Все кроссовки</h1>
-          <img src="./assets/img/sneakers/1.png" />
+          {/* <img src="./assets/img/sneakers/1.png" /> */}
           <div className="search-block">
             <img className="search-block-img" src={searchIcon} alt="Search" />
             <input style={{ outline: "none" }} placeholder="Поиск..." />
@@ -43,16 +51,16 @@ function App() {
         </div>
 
         <div className="sneakers">
-          {items.map((obj) => (
+          {items.map((item) => (
             <Card
-              title={obj.title}
-              price={obj.price}
-              imageUrl={obj.imageUrl}
+              title={item.title}
+              price={item.price}
+              imageUrl={item.imageUrl}
               liked={heartUnlike}
               plus={plus}
               plusAdded={plusAdded}
               onFavorite={() => console.log("Добавили в закладки")}
-              onPlus={() => console.log("Нажали плюс")}
+              onPlus={(obj) => onAddToCart(obj)}
             />
           ))}
         </div>

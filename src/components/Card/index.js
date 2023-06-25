@@ -7,12 +7,11 @@ import plusAddedCard from "../Card/img/icons8-done-24.png";
 import heartLike from "../Card/img/heart-like.svg";
 import heartUnlike from "../Card/img/heart-unlike.svg";
 
-console.log(styles);
-
-function Card(props) {
+function Card({ title, imageUrl, price, onFavorite, onPlus }) {
   const [isAdded, setIsAdded] = React.useState(false);
 
   const onClickPlus = () => {
+    onPlus({ title, imageUrl, price });
     setIsAdded(!isAdded);
   };
 
@@ -24,19 +23,19 @@ function Card(props) {
 
   return (
     <div className={styles.card}>
-      <div className={styles.favorite} onClick={props.onFavorite}>
+      <div className={styles.favorite} onClick={onFavorite}>
         <img
           onClick={onClickFollow}
           src={isFollowed ? heartLike : heartUnlike}
           alt="Unliked"
         />
       </div>
-      <img class={styles.displayed} src={props.imageUrl} alt="Sneakers" />
-      <h5>{props.title}</h5>
+      <img class={styles.displayed} src={imageUrl} alt="Sneakers" />
+      <h5>{title}</h5>
       <div className={styles.cardButton}>
         <div className={styles.textButton}>
           <span>Цена:</span>
-          <b style={{ fontSize: 13 }}>{props.price} грн</b>
+          <b style={{ fontSize: 13 }}>{price} грн</b>
         </div>
         <img
           className={styles.plus}
