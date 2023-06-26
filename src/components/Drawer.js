@@ -1,6 +1,4 @@
 import removeBtn from "../assets/img/remove.svg";
-import sneaker1 from "../assets/img/sneakers/1.png";
-import sneaker2 from "../assets/img/sneakers/2.png";
 
 function Drawer({ onClose, items = [] }) {
   return (
@@ -35,7 +33,7 @@ function Drawer({ onClose, items = [] }) {
                 }}
                 width={70}
                 height={70}
-                //src={sneaker1}
+                // src="./assets/img/sneakers/1.png"
                 alt="Sneakers"
               />
               <div style={{ marginRight: 20 }}>
