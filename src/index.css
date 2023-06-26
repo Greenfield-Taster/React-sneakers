@@ -102,7 +102,7 @@ li {
 .drawer {
   position: absolute;
   width: 420px;
-  height: 80%;
+  height: 90%;
   right: 0;
   background: #ffffff;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
@@ -170,4 +170,29 @@ li {
 
 .greenButton:active {
   transform: translateY(5px);
+}
+.cartEmpty {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.cartEmpty {
+  text-align: center;
+  align-items: center;
+}
+.cartEmpty p {
+  width: 280px;
+  line-height: 24px;
+}
+.cartEmpty .greenButton {
+  width: 245px;
+  margin-top: 20px;
+  border-radius: 18px;
+  border: 0;
+}
+.cartEmpty img {
+  margin-bottom: 20px;
+  width: 120px;
+  height: 120px;
 }

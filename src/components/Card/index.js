@@ -9,24 +9,27 @@ import heartUnlike from "../Card/img/heart-unlike.svg";
 
 function Card({ title, imageUrl, price, onFavorite, onPlus }) {
   const [isAdded, setIsAdded] = React.useState(false);
+  const [isFavorite, setIsFavorite] = React.useState(false);
 
   const onClickPlus = () => {
     onPlus({ title, imageUrl, price });
     setIsAdded(!isAdded);
   };
-
-  const [isFollowed, setIsFollow] = React.useState(false);
-
-  const onClickFollow = () => {
-    setIsFollow(!isFollowed);
+  const onClickFavorite = () => {
+    setIsFavorite(!isFavorite);
   };
+  // const [isFollowed, setIsFollow] = React.useState(false);
+
+  // const onClickFollow = () => {
+  //   setIsFollow(!isFollowed);
+  // };
 
   return (
     <div className={styles.card}>
-      <div className={styles.favorite} onClick={onFavorite}>
+      <div className={styles.favorite} onClick={onClickFavorite}>
         <img
-          onClick={onClickFollow}
-          src={isFollowed ? heartLike : heartUnlike}
+          onClick={onClickFavorite}
+          src={isFavorite ? heartLike : heartUnlike}
           alt="Unliked"
         />
       </div>

@@ -20,6 +20,7 @@ import plusAdded from "../src/assets/img/icons8-done-24.png";
 function App() {
   let [items, setItems] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
+  // const [favorites, setFavorites] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState("");
   const [cartOpened, setCartOpened] = React.useState(false);
 
@@ -41,8 +42,13 @@ function App() {
     setCartItems((prev) => [...prev, obj]);
   };
 
+  // const onFavorite = (obj) => {
+  //   axios.delete("https://648b113717f1536d65ea468c.mockapi.io/favorrites", obj);
+  //   setFavorites((prev) => [...prev, obj]);
+  // };
+
   const onRemoveItem = (id) => {
-    // axios.delete(`https://648b113717f1536d65ea468c.mockapi.io/cart/${id}`, obj);
+    axios.delete(`https://648b113717f1536d65ea468c.mockapi.io/cart/${id}`);
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
