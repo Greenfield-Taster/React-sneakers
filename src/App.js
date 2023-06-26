@@ -3,6 +3,7 @@ import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
 import searchIcon from "./assets/img/search.png";
+import removeBtn from "./assets/img/remove.svg";
 // import sneak1 from "./assets/img/sneakers/1.png";
 // import sneak2 from "../src/assets/img/sneakers/2.png";
 // import sneak3 from "../src/assets/img/sneakers/3.png";
@@ -18,6 +19,7 @@ import plusAdded from "../src/assets/img/icons8-done-24.png";
 function App() {
   let [items, setItems] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
+  const [searchValue, setSearchValue] = React.useState("");
   const [cartOpened, setCartOpened] = React.useState(false);
 
   React.useEffect(() => {
@@ -34,6 +36,10 @@ function App() {
     setCartItems((prev) => [...prev, obj]);
   };
 
+  const onChangeSearchInput = (event) => {
+    setSearchValue(event.target.value);
+  };
+
   return (
     <div className="wrapper">
       {cartOpened && (
@@ -42,26 +48,49 @@ function App() {
       <Header onClickCart={() => setCartOpened(true)} />
       <div className="content">
         <div className="search-text">
-          <h1>Все кроссовки</h1>
+          <h1>
+            {searchValue
+              ? `Поиск по запросу: "${searchValue}"`
+              : "Все кроссовки"}
+          </h1>
+
           <div className="search-block">
             <img className="search-block-img" src={searchIcon} alt="Search" />
-            <input style={{ outline: "none" }} placeholder="Поиск..." />
+            {searchValue && (
+              <img
+                onClick={() => setSearchValue("")}
+                className="clear"
+                src={removeBtn}
+                alt="Clear"
+              />
+            )}
+            <input
+              onChange={onChangeSearchInput}
+              value={searchValue}
+              style={{ outline: "none" }}
+              placeholder="Поиск..."
+            />
           </div>
         </div>
 
         <div className="sneakers">
-          {items.map((item) => (
-            <Card
-              title={item.title}
-              price={item.price}
-              imageUrl={item.imageUrl}
-              liked={heartUnlike}
-              plus={plus}
-              plusAdded={plusAdded}
-              onFavorite={() => console.log("Добавили в закладки")}
-              onPlus={(obj) => onAddToCart(obj)}
-            />
-          ))}
+          {items
+            .filter((item) =>
+              item.title.toLowerCase().includes(searchValue.toLowerCase())
+            )
+            .map((item, index) => (
+              <Card
+                key={index}
+                title={item.title}
+                price={item.price}
+                imageUrl={item.imageUrl}
+                liked={heartUnlike}
+                plus={plus}
+                plusAdded={plusAdded}
+                onFavorite={() => console.log("Добавили в закладки")}
+                onPlus={(obj) => onAddToCart(obj)}
+              />
+            ))}
         </div>
       </div>
     </div>

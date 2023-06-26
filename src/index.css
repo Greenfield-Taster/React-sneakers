@@ -63,6 +63,15 @@ li {
   display: flex;
   border-radius: 10px;
   padding: 0 15px;
+  position: relative;
+}
+.search-block .clear {
+  position: absolute;
+  right: 0;
+  width: 17px;
+  height: 17px;
+  top: 14px;
+  cursor: pointer;
 }
 .search-block input {
   border: 0;

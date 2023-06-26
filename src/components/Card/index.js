@@ -30,7 +30,7 @@ function Card({ title, imageUrl, price, onFavorite, onPlus }) {
           alt="Unliked"
         />
       </div>
-      <img class={styles.displayed} src={imageUrl} alt="Sneakers" />
+      <img className={styles.displayed} src={imageUrl} alt="Sneakers" />
       <h5>{title}</h5>
       <div className={styles.cardButton}>
         <div className={styles.textButton}>
