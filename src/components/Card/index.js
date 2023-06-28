@@ -27,11 +27,11 @@ function Card({ title, imageUrl, price, onFavorite, onPlus }) {
   return (
     <div className={styles.card}>
       <div className={styles.favorite} onClick={onClickFavorite}>
-        <img
+        {/* <img
           onClick={onClickFavorite}
           src={isFavorite ? heartLike : heartUnlike}
           alt="Unliked"
-        />
+        /> */}
       </div>
       <img className={styles.displayed} src={imageUrl} alt="Sneakers" />
       <h5>{title}</h5>

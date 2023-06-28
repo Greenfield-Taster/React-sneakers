@@ -104,10 +104,10 @@ function App() {
                 title={item.title}
                 price={item.price}
                 imageUrl={item.imageUrl}
-                liked={heartUnlike}
+                // liked={heartUnlike}
                 plus={plus}
                 plusAdded={plusAdded}
-                onFavorite={() => console.log("Добавили в закладки")}
+                // onFavorite={() => console.log("Добавили в закладки")}
                 onPlus={(obj) => onAddToCart(obj)}
               />
             ))}
